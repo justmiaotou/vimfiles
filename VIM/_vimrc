@@ -251,6 +251,7 @@ if has("win32")
     "set guifontwide=YaHei\ Consolas\ Hybrid:h10
 endif
 
+" 想预先打开的文件
 function! PreOpen()
     cd D:\Users\Administrator\Documents\My doc\FE\lab\
     open canvas.html
@@ -258,5 +259,3 @@ function! PreOpen()
     tabe css\memo.css
     tabe js\test\common.js
 endfunction
-
-cd E:\svn\
