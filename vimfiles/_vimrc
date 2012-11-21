@@ -182,6 +182,22 @@ let Tlist_WinWidth=30
 
 """"""""""""""""""""""""""""""
 
+" Syntastic {
+" active mode: 当一个buffer保存或第一次打开时自动检查
+" passive mode: 当使用命令:SyntasticCheck时进行检查
+" lnext: 跳至下一个错误
+" lprev: 跳至上一个错误
+let g:syntastic_mode_map = { 'mode': 'passive',
+                           \ 'active_filetypes': ['', ''],
+                           \ 'passive_filetypes': ['javascript'] }
+" 自动跳转到第一个错误
+let g:syntastic_auto_jump=1
+" 当有错误时自动打开error window
+let g:syntastic_auto_loc_list=1
+" }
+
+""""""""""""""""""""""""""""""
+
 " Functions {
 " 想预先打开的文件
 function! PreOpen()
