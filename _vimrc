@@ -102,7 +102,7 @@ language messages zh_CN.UTF-8
 
 " persistent undo
 set undofile
-set undodir=$VIM/\_undofiles
+set undodir=$HOME/\_undofiles
 set undolevels=2000
 
 " 设置显示字体
