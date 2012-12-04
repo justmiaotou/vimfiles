@@ -67,20 +67,12 @@ hi CursorLine guibg=#252525
 
 "文件默认编码"
 set enc=utf-8
-set encoding=utf-8
 "set enc=cp936
 "set encoding=cp936
-"打开文件进行解码的猜测列表，严格编码放在前面，宽松的放后面
-set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
 "文件保存时使用的编码
 set fileencoding=utf-8
-"if has('win32')
-"   set fileencoding=utf-8
-"    set fileencoding=cp936
-"else
-"    set fileencoding=utf-8
-"    set fileencoding=cp936
-"endif
+"打开文件进行解码的猜测列表，严格编码放在前面，宽松的放后面
+set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
 
 " 高亮行尾空格
 hi WhiteSpace guibg=red
