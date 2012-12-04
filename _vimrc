@@ -19,6 +19,7 @@ map <F6> :%s/\s\+$//gi<CR>
 "map <silent> <F7> :TlistToggle<CR>
 " 设置是否显示行号
 "map <F12> :set nu!<CR>
+map <F12> :call ToggleHighlightError()<CR>
 
 imap jj <ESC>
 nmap <C-N> :tabnext<CR>
@@ -146,6 +147,19 @@ call pathogen#infect()
 
 """"""""""""""""""""""""""""""
 
+" JSLint {
+let g:JSLintHighlightErrorLine = 0
+function! ToggleHighlightError()
+    if g:JSLintHighlightErrorLine == 0
+        let g:JSLintHighlightErrorLine = 1
+    else
+        let g:JSLintHighlightErrorLine = 0
+    endif
+endfun
+" }
+
+""""""""""""""""""""""""""""""
+
 " Powerline {
 set nocompatible
 set t_Co=256
@@ -185,8 +199,8 @@ let Tlist_WinWidth=30
 " lnext: 跳至下一个错误
 " lprev: 跳至上一个错误
 let g:syntastic_mode_map = { 'mode': 'passive',
-                           \ 'active_filetypes': ['', ''],
-                           \ 'passive_filetypes': ['javascript'] }
+            \ 'active_filetypes': ['', ''],
+            \ 'passive_filetypes': ['javascript'] }
 " 自动跳转到第一个错误
 let g:syntastic_auto_jump=1
 " 当有错误时自动打开error window
@@ -222,11 +236,11 @@ endfunction
 
 " Platform
 function! MySys()
-  if has("win32")
-    return "windows"
-  else
-    return "linux"
-  endif
+    if has("win32")
+        return "windows"
+    else
+        return "linux"
+    endif
 endfunction
 
 function! SwitchToBuf(filename)
