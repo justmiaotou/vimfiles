@@ -34,9 +34,9 @@ else
 endif
 "map <F10> :!python C:\Python32\Lib\site-packages\closure_linter\gjslint-wrapper.py --nojsdoc %<CR>
 " 对JS进行校验
-map <F8> :!gjslint --nojsdoc % \| grep -v "Line too long"<CR>
+map <F9> :!gjslint --nojsdoc % \| grep -v "Line too long"<CR>
 " 对JS格式进行修正
-map <F9> :!fixjsstyle %<CR>
+"map <F9> :!fixjsstyle %<CR>
 
 call JavaScriptFold()
 setl fen
