@@ -29,6 +29,7 @@ nmap <C-P> :tabprevious<CR>
 syntax on
 " 使~/.vim/after/ftplugin生效
 filetype plugin indent on
+set fileformats=unix
 " 显示行号
 set nu
 " 颜色主题
@@ -277,6 +278,7 @@ endfunction
 "                               :cl 所有匹配结果
 "                               :cn 到下一个
 "                               :cp 到上一个
+"                               j标志位表示搜索后留在当前文件
 "                   >>----------------------------------<< 
 "   :w !sudo tee %      保存需要sudo权限的文件      
 "                   >>----------------------------------<< 
