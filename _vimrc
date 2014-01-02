@@ -9,7 +9,7 @@ let mapleader = ";"
 "保存文件
 map <F2> :w<CR>
 "关闭文件
-map <F3> :q<CR> 
+map <F3> :q<CR>
 "打开上级菜单
 "map <F4> :e .<CR>
 map <F4> :NERDTree<CR>
@@ -41,11 +41,11 @@ set laststatus=2
 " 启动的时候不显示那个援助索马里儿童的提示
 set shortmess=atI
 " 缩进为4个空格宽度
-set tabstop=4
+set tabstop=2
 " 自动缩进使用的空格数
-set shiftwidth=4
+set shiftwidth=2
 " 编辑插入tab时，把tab算作的空格数
-set softtabstop=4
+set softtabstop=2
 " 缩进使用空格
 set expandtab
 " 自动缩进
@@ -63,8 +63,8 @@ set hlsearch
 " 开启高光标行
 " set cursorline
 hi CursorLine guibg=#252525
-" 开启高光标列 
-"set cursorcolumn 
+" 开启高光标列
+"set cursorcolumn
 "hi CursorColumn guibg=#252525
 
 "文件默认编码"
@@ -279,21 +279,28 @@ endfunction
 "                               :cn 到下一个
 "                               :cp 到上一个
 "                               j标志位表示搜索后留在当前文件
-"                   >>----------------------------------<< 
-"   :w !sudo tee %      保存需要sudo权限的文件      
-"                   >>----------------------------------<< 
+"                   >>----------------------------------<<
+"   :w !sudo tee %      保存需要sudo权限的文件
+"                   >>----------------------------------<<
 "   CTRL + ]            跳转到XXX标签（可跨文件，例如帮助文件里的绿色关键字）
 "   CTRL + t            回跳到上个标签（同上）
 "   ``                  可以回跳到上一个位置. 多次按``会在两个位置间跳转
 "   CTRL + o            跳到前一个编辑点
 "   CTRL + i            跳到下一个编辑点
-"                   >>------------- mark ----------------<< 
+"                   >>------------- mark ----------------<<
 "   :marks              当前可用marks
 "   mt                  t为任意字母。在当前位置设置一个名字为t的mark
 "   `t                  可以通过查看:marks查询有哪些t可用，然后用此命令跳转至
-"                   >>------------ record --------------<< 
+"                   >>------------ record --------------<<
 "   q[a-z]             开始记录键入的指令，名称为a-z中的一个字母
 "   q                  记录完成
 "   q[A-Z]             扩展之前记录的名称为[a-z]的指令集
 "   [n]@[a-z]          执行n次之前记录的名称为[a-z]的行为
 "   @@                 重复上次指令
+"                   >>---------- copy / paste ----------<<
+"                       # 系统级别的复制粘贴操作需要在编译vim的时候就进行配置
+"                       # :echo has('clipboard') 若输出0，表示不支持，
+  "                     # 可以通过 apt-get install vim-gtk 来扩展支持
+"   "+y                 复制选中内容到system's clipboard
+"   "+p                 粘贴system's clipboard内容
+"                   >>----------------------------------<<
