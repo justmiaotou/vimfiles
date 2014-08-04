@@ -180,6 +180,12 @@ let NERDTreeWinSize=20
 
 """"""""""""""""""""""""""""""
 
+" CoffeeScript {
+    autocmd BufNewFile,BufReadPost *.coffee setl foldmethod=indent nofoldenable
+" }
+
+""""""""""""""""""""""""""""""
+
 " Tag list (ctags) {
 if has("win32")                         "设定windows系统中ctags程序的位置
     let Tlist_Ctags_Cmd = 'C:\ctags58\ctags.exe'
