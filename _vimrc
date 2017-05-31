@@ -24,6 +24,7 @@ map <F12> :call ToggleHighlightError()<CR>
 imap jj <ESC>
 nmap <C-N> :tabnext<CR>
 nmap <C-P> :tabprevious<CR>
+map <silent> <leader>f :FufFile<cr>
 
 " 打开语法高亮
 syntax on
@@ -123,6 +124,16 @@ if has("win32")
     source $VIMRUNTIME\mswin.vim
     behave mswin
 else
+    " 圆滑版
+    "set guifont=Source\ Code\ Pro\ for\ Powerline:h16
+    set guifont=Source\ Code\ Pro:h16
+    "set guifontwide=Yuanti\ SC\ Regular:h12
+
+    " 有棱有角版
+    "set guifont=Anonymous\ Pro\ for\ Powerline:h16
+    "set guifontwide=Lantinghei\ SC\ Extralight
+    set guifontwide=Source\ Han\ Sans
+
     "Fast reloading of the .vimrc
     map <silent> <leader>s :source ~/.vimrc<cr>
     "Fast editing of .vimrc
@@ -167,6 +178,7 @@ set t_Co=256
 if has('win32')
     let g:Powerline_symbols = 'compatible'
 else
+    "let g:Powerline_symbols = 'compatible'
     let g:Powerline_symbols = 'fancy'
 endif
 let g:Powerline_colorscheme = 'solarized256'
@@ -212,6 +224,36 @@ let g:syntastic_mode_map = { 'mode': 'passive',
 let g:syntastic_auto_jump=1
 " 当有错误时自动打开error window
 let g:syntastic_auto_loc_list=1
+" }
+
+""""""""""""""""""""""""""""""
+
+" Different View Setting {
+set background=dark
+if has('gui_macvim')
+  " 透明度
+  set transparency=0
+  " 全屏
+  set fu
+  colorscheme solarized
+endif
+if has('gui_running')
+  " 隐藏所有，例如左右侧滚动条
+  "set guioptions=
+  " 支持[COMMAND]+C/V进行复制并粘贴至其它程序
+  set guioptions+=a
+  " 隐藏GUI标签条，显示终端形式的标签条
+  set guioptions-=e
+  " 隐藏左滚动条
+  set guioptions-=L
+  " 隐藏右滚动条（卧槽小写）
+  set guioptions-=r
+else
+  "colorscheme Tomorrow-Night
+  let g:solarized_termcolors=256
+  colorscheme solarized
+endif
+
 " }
 
 """"""""""""""""""""""""""""""
@@ -293,7 +335,7 @@ endfunction
 "   ``                  可以回跳到上一个位置. 多次按``会在两个位置间跳转
 "   CTRL + o            跳到前一个编辑点
 "   CTRL + i            跳到下一个编辑点
-"                   >>------------- mark ----------------<<
+"                   >>------------- mark ---------------<<
 "   :marks              当前可用marks
 "   mt                  t为任意字母。在当前位置设置一个名字为t的mark
 "   `t                  可以通过查看:marks查询有哪些t可用，然后用此命令跳转至
@@ -310,3 +352,17 @@ endfunction
 "   "+y                 复制选中内容到system's clipboard
 "   "+p                 粘贴system's clipboard内容
 "                   >>----------------------------------<<
+"   zz                  滚动页面至当前行屏幕居中
+"   zt                  滚动页面至当前行屏幕居顶
+"   zb                  滚动页面至当前行屏幕居底
+"                   >>---------- 窗口相关操作 ----------<<
+"   tabe [filename]     打开文件或空标签页
+"   vsp                 将当前窗口垂直划分成两屏，同时显示当前文档
+"   sp                  将当前窗口水平划分成两屏，同时显示当前文档
+"   ^w+>                当前窗口被划分为多屏时，将当前分屏水平扩大一个单位
+"   ^w+<                当前窗口被划分为多屏时，将当前分屏水平缩小一个单位
+"   ^w+[hjkl或上下左右键] 在当前窗口中的不同分屏之间移动
+"   ^n[gt]              跳转至下个标签页
+"   ^p[gT]              跳转至上个标签页
+"   tabmove             将当前标签页移到末尾
+"   tabmove [n]         将当前标签页移到第（n-1）的位置，省略n则移至末尾

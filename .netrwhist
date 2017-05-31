@@ -1,0 +1,10 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =8
+let g:netrw_dirhist_1='/Users/zhoujunmiao/Downloads/knotable-logs/logs'
+let g:netrw_dirhist_2='/Library/Preferences/Parallels/licenses'
+let g:netrw_dirhist_3='/Users/zhoujunmiao/pro/knotable/knotable'
+let g:netrw_dirhist_4='/Users/zhoujunmiao/pro/KnoteUP/webapp/client'
+let g:netrw_dirhist_5='/Users/zhoujunmiao/pro/knotable/knotable/packages'
+let g:netrw_dirhist_6='/Users/zhoujunmiao/pro/k-note-chrome/app/config'
+let g:netrw_dirhist_7='/Users/zhoujunmiao/.meteor/packages/iron:router'
+let g:netrw_dirhist_8='/Users/zhoujunmiao/pro/test/asteroid-test/node_modules'
